@@ -2,9 +2,12 @@
   <head>
     <title>Blackjack</title>
     <link href="styles/app.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="styles/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" media="screen">
   </head>
   <body>
+    <div class="modal"><span id="message1">--message--</span><br/><span id="message2">--message 2--</span><button>Click for a NEW GAME.</button></div>
     <script src="lib/jquery.js"></script>
+    <script src="lib/jquery-ui.js"></script>
     <script src="lib/underscore.js"></script>
     <script src="lib/backbone.js"></script>
 
@@ -19,6 +22,7 @@
     <script src="compiled/app/views/HandView.js"></script>
     <script src="compiled/app/views/GameView.js"></script>
     <script src="compiled/app/views/PlayerView.js"></script>
+    <script src="compiled/app/views/InfoView.js"></script>
     <script src="compiled/app/views/AppView.js"></script>
 
     <script src="compiled/app/main.js"></script>

@@ -19,8 +19,7 @@ class window.Game extends Backbone.Model
     @compareScores()
     that = @
     setTimeout ( ->
-      alert "Game over!"
-      that.resetGame()
+      console.log "Game over!"
     ), 500
 
   compareScores: ->
@@ -30,13 +29,10 @@ class window.Game extends Backbone.Model
     playerScores.shift() if playerScores.length == 2 and playerScores[1] <= 21
     dealerScores.shift() if dealerScores.length == 2 and dealerScores[1] <= 21
     if dealerScores[0] > 21
-      console.log "You win. Dealer busted!"
+      @trigger "dealer busted", @
     if playerScores[0] > 21
-      console.log "You lose. You busted!"
+      @trigger "player busted", @
     else
-      console.log "You lose! :(" if dealerScores[0] > playerScores[0]
-      console.log "You win! :D" if dealerScores[0] < playerScores[0]
-      console.log "You push. :|" if dealerScores[0] == playerScores[0]
-
-  resetGame: ->
-    @initialize()
+      @trigger "lose", @ if dealerScores[0] > playerScores[0]
+      @trigger "win", @ if dealerScores[0] < playerScores[0]
+      @trigger "push", @ if dealerScores[0] == playerScores[0]

@@ -7,7 +7,6 @@ class window.Hand extends Backbone.Collection
   hit: ->
     @add(@deck.pop()).last()
     if @scores()[0] > 21
-      console.log "Someone busted!"
       @trigger 'busted', @
 
   scores: ->
