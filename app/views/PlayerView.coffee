@@ -1,5 +1,5 @@
 class window.PlayerView extends Backbone.View
-  template: _.template '<div class="player-chips-container">Chips: <%= chips %> </div>'
+  template: _.template '<div class="player-chips-container"><div class="label">Chips: <%= chips %> </div></div>'
 
   initialize: ->
     @render()

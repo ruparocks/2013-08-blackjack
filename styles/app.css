@@ -1,3 +1,24 @@
+body {background-image: url("img/table.jpg")}
+
+.player-chips-container {
+  background-color: #439C5C;
+  margin: 30px auto;
+  padding: 20px;
+  width: 70px;
+  border-radius: 5px;
+}
+
+.game-buttons {
+  margin: 10 auto;
+  width: 200px;
+  text-align: center;
+}
+
+.player-hand-container, .dealer-hand-container {
+  margin: 0 auto;
+  width: 250px;
+}
+
 #card {
   float: left;
   border: solid 1px black;
@@ -8,8 +29,6 @@
   color: rgba(0, 0, 0, 0);
 
 }
-
-
 
 .hand {
   overflow: auto;
@@ -76,7 +95,7 @@
 .Hearts10 {background-image: url("img/h10.png")}
 
 .covered {
-  background-image: url("img/card-back.jpg");
+  background-image: url("img/red.png");
   background-color: black;
   color: rgba(0, 0, 0, 0);
 }

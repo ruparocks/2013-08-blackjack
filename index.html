@@ -2,14 +2,22 @@
   <head>
     <title>Blackjack</title>
     <link href="styles/app.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="styles/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="styles/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
   </head>
   <body>
-    <div class="modal"><span id="message1">--message--</span><br/><span id="message2">--message 2--</span><button>Click for a NEW GAME.</button></div>
+    <div id="myModal" class="modal hide fade">
+      <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Results: <span id="message2">--message 2--</span></h3>
+  </div>
+  <div class="modal-body"><span id="message1">--message--</span>
+  </div>
+  <div class="modal-footer"><button class="btn btn-primary">Click for a NEW GAME.</button>
+  </div>
+</div>
     <script src="lib/jquery.js"></script>
-    <script src="lib/jquery-ui.js"></script>
     <script src="lib/underscore.js"></script>
     <script src="lib/backbone.js"></script>
+    <script src="styles/js/bootstrap.min.js"></script>
 
     <script src="compiled/app/models/Card.js"></script>
     <script src="compiled/app/models/Hand.js"></script>
