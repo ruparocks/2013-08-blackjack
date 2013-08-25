@@ -6,6 +6,11 @@ class window.App extends Backbone.Model
     @set 'game', game = new Game(player, deck)
     game.on 'gameOver', @newGame, @
     player.on 'betPlaced', @startGame, @
+    game.on 'dealer busted', @playerWon, @
+    game.on 'won', @playerWon, @
+    game.on 'player busted', @playerLost, @
+    game.on 'lose', @playerLost, @
+    game.on 'push', @playerPushed, @ 
 
   newGame: ->
     deck = @get 'deck'
@@ -16,3 +21,12 @@ class window.App extends Backbone.Model
 
   startGame: ->
     (@get 'game').startGame()
+
+  playerWon: ->
+    (@get 'player').playerWon()
+
+  playerLost: ->
+    (@get 'player').playerLost()
+
+  playerPushed: ->
+    (@get 'player').playerPushed()
