@@ -5,6 +5,7 @@ class window.App extends Backbone.Model
     @set 'deck', deck = new Deck()
     @set 'game', game = new Game(player, deck)
     game.on 'gameOver', @newGame, @
+    player.on 'betPlaced', @startGame, @
 
   newGame: ->
     deck = @get 'deck'
@@ -12,3 +13,6 @@ class window.App extends Backbone.Model
     @set 'deck', deck
     @set 'game', game = new Game((@get 'player'), deck)
     console.log "New game"
+
+  startGame: ->
+    (@get 'game').startGame()

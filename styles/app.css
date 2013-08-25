@@ -4,14 +4,26 @@ body {background-image: url("img/table.jpg")}
   background-color: #439C5C;
   margin: 30px auto;
   padding: 20px;
-  width: 70px;
+  width: 200px;
   border-radius: 5px;
 }
-
+.bet {
+  margin-top: 8px;
+  margin-right: 5px;
+  width: 145px;
+}
 .game-buttons {
   margin: 10 auto;
   width: 200px;
   text-align: center;
+}
+
+.hand-title {
+  color:#FFFFFF;
+}
+.chips {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .player-hand-container, .dealer-hand-container {

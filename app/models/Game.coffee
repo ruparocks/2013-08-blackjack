@@ -9,7 +9,6 @@ class window.Game extends Backbone.Model
     (@get 'playerHand').on 'busted', @stand, @
     (@get 'dealerHand').on 'busted', @stand, @
     if (@get 'playerHand').scores().length == 2 && (@get 'playerHand').scores()[1] == 21
-      console.log "Blackjack"
       @stand()
 
   stand: ->
@@ -36,3 +35,8 @@ class window.Game extends Backbone.Model
       @trigger "lose", @ if dealerScores[0] > playerScores[0]
       @trigger "win", @ if dealerScores[0] < playerScores[0]
       @trigger "push", @ if dealerScores[0] == playerScores[0]
+
+  startGame: ->
+    (@get 'playerHand').at(0).flip()
+    (@get 'playerHand').at(1).flip()
+    (@get 'dealerHand').at(1).flip()
